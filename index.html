@@ -15,4 +15,27 @@
 </iframe>
 </center>
 
+<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+<script type="text/javascript">
+  // document.write('<div>javascript active</div>');
+  var channel_id  = 83370;
+  var api_key     = 'VY87W576MZ4H7IFY';
+  
+  google.setOnLoadCallback(loadData);
+  
+  function loadData() {
+    var p;
+    $.getJSON('https://api.thingspeak.com/channels/' + channel_id + '/feed/last.json?api_key=' + api_key, function(data) {
+      p = data.field1; if (p) document.getElementById('temp').innerHTML=p;
+      p = data.field2; if (p) document.getElementById('press').innerHTML=p;
+      p = data.field3; if (p) document.getElementById('visible').innerHTML=p;
+      p = data.field4; if (p) document.getElementById('uv').innerHTML=p;
+      p = data.field5; if (p) document.getElementById('humidity').innerHTML=p;
+      p = data.field6; if (p) document.getElementById('airq').innerHTML=p;
 
+    });
+  }
+  
+ 
+</script>
