@@ -24,21 +24,14 @@
       <tr><td>Humidity <label id="humidity"></label>%<br>Quality <label id="airq"></label>%</td></tr>
     </table>
     <br>
-    <table>
-      <tr>Last 24 hours</tr>
-      <tr>
-    <iframe 
-        width="450" height="260" 
-        style="border: 1px solid #cccccc;" 
-        src="http://api.thingspeak.com/channels/79656/charts/1?width=450&height=260&results=36&dynamic=true&type=spline&title=Temp%20(ºC) Last 24 hours">
-    </iframe>
-      </tr>
-    </table>
-    <table>
-      <tr>Last 60 minutes</tr>
-      <tr></tr>
-    </table>
     
+  <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
+    src="http://api.thingspeak.com/channels/79656/charts/1?width=450&height=260&results=24&dynamic=true&type=spline&title=Temp%20(ºC) Last 24 hours">
+  </iframe>
+
+  <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
+    src="http://api.thingspeak.com/channels/83370/charts/1?width=450&height=260&results=60&dynamic=true&type=spline&title=Temp%20(ºC) Last hour" >
+  </iframe>
 </center>
 
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
