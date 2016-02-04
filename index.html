@@ -14,24 +14,26 @@
 </style>
 
 <center>
-    <h1><label id="temp"></label>ºC&nbsp;&nbsp;<label id="press"></label>mb</h1>
-    <table style="display: inline-block;">
-      <tr><th>Light</th></tr>
-      <tr><td>Visible <label id="visible"></label>%<br>UV <label id="uv"></label></td></tr>
-    </table>&nbsp;&nbsp;&nbsp;&nbsp;
-    <table style="display: inline-block;">
-      <tr><th>Air</th></tr>
-      <tr><td>Humidity <label id="humidity"></label>%<br>Quality <label id="airq"></label>%</td></tr>
-    </table>
-    <br>
+  <h1><label id="temp"></label>ºC&nbsp;&nbsp;<label id="press"></label>mb</h1>
+  <table style="display: inline-block;">
+    <tr><th>Light</th></tr>
+    <tr><td>Visible <label id="visible"></label>%<br>UV <label id="uv"></label></td></tr>
+  </table>&nbsp;&nbsp;&nbsp;&nbsp;
+  <table style="display: inline-block;">
+    <tr><th>Air</th></tr>
+    <tr><td>Humidity <label id="humidity"></label>%<br>Quality <label id="airq"></label>%</td></tr>
+  </table>
+  <h1>&nbsp;</h1>
     
   <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
     src="http://api.thingspeak.com/channels/79656/charts/1?width=450&height=260&results=24&dynamic=true&type=spline&title=Temp%20(ºC) Last 24 hours">
   </iframe>
-
+  &nbsp;
   <iframe width="450" height="260" style="border: 1px solid #cccccc;" 
     src="http://api.thingspeak.com/channels/83370/charts/1?width=450&height=260&results=60&dynamic=true&type=spline&title=Temp%20(ºC) Last hour" >
   </iframe>
+  
+  
 </center>
 
 <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
@@ -56,5 +58,6 @@
     });
   }
   
+  setInterval('loadData()', 30000);
  
 </script>
